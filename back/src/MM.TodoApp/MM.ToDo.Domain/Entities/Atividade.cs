@@ -1,4 +1,4 @@
-﻿namespace MM.Todo.WebApi.Models
+﻿namespace MM.Todo.Domain.Entities
 {
     public class Atividade
     {

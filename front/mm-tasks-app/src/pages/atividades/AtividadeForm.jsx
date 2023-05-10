@@ -49,11 +49,6 @@ export default function AtividadeForm(props) {
 
   return (
     <>
-      <h1>
-        {atividade.id !== 0 && atividade.id !== undefined
-          ? "Atividade" + atividade.id
-          : "Atividades"}
-      </h1>
       <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <label className="form-label">Título</label>
@@ -67,7 +62,7 @@ export default function AtividadeForm(props) {
           />
         </div>
         <div className="col-md-6">
-          <label for="inputState" className="form-label">
+          <label className="form-label">
             Prioridade
           </label>
           <select
@@ -77,10 +72,10 @@ export default function AtividadeForm(props) {
             value={atividade.prioridade}
             onChange={inputTextHandler}
           >
-            <option selected>Selecionar...</option>
-            <option value="1">Baixa</option>
-            <option value="2">Normal</option>
-            <option value="3">Alta</option>
+            <option value='NaoDefinido'>Selecionar...</option>
+            <option value="Baixa">Baixa</option>
+            <option value="Normal">Normal</option>
+            <option value="Alta">Alta</option>
           </select>
         </div>
         <div className="col-md-12">

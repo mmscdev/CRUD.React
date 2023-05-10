@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MM.Todo.WebApi.Models;
+using MM.Todo.Domain.Entities;
+using MM.ToDo.Data.Mappings;
 
-namespace MM.Todo.WebApi.Data
+namespace MM.ToDo.Data.Context.Data
 {
     public class DataContext : DbContext
     {
@@ -10,5 +11,11 @@ namespace MM.Todo.WebApi.Data
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AtividadeMap());
+        }
+
     }
 }
