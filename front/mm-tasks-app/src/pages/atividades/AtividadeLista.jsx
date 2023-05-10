@@ -1,5 +1,5 @@
 import React from "react";
-import Atividade from "./Atividade";
+import Atividade from "./AtividadeItem";
 
 export default function AtividadeLista(props) {
   return (
@@ -8,7 +8,7 @@ export default function AtividadeLista(props) {
         <Atividade
           key={ativ.id}
           ativ={ativ}
-          deletarAtividade={props.deletarAtividade}          
+          handleConfirmModal={props.handleConfirmModal}          
           editarAtividade={props.editarAtividade}
         />
       ))}
