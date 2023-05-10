@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import AtividadeForm from "./pages/atividades/AtividadeForm";
-import AtividadeLista from "./pages/atividades/AtividadeLista";
-import api from "./api/atividade";
+import api from "./../../api/atividade";
 import { Button, Modal } from "react-bootstrap";
-import Title from "./components/TitlePage";
+import Title from './../../components/TitlePage';
+import AtividadeLista from './AtividadeLista';
+import AtividadeForm from './AtividadeForm';
 
-function App() {
+export default function Atividade() {
   const [atividades, setAtividades] = useState([]);
   const [atividade, setAtividade] = useState({ id: 0 });
   const [showAtividadeModal, setShowAtividadeModal] = useState(false);
@@ -123,5 +122,3 @@ function App() {
     </>
   );
 }
-
-export default App;

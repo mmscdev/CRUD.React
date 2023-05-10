@@ -1,21 +1,28 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { NavLink } from "react-router-dom";
 
-function Menu() {
+export default function Menu() {
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/">
+          Home
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Clientes</Nav.Link>
-            <Nav.Link href="#link">Atividades</Nav.Link>
+            <Nav.Link  as={NavLink} to="/clientes">
+              Clientes
+            </Nav.Link>
+            <Nav.Link  as={NavLink} to="/atividades">
+              Atividades
+            </Nav.Link>
           </Nav>
-          <Nav>            
-          <NavDropdown align='end' title="Mayara" id="basic-nav-dropdown">
+          <Nav>
+            <NavDropdown align="end" title="Mayara" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Perfil</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Configurações
@@ -32,5 +39,3 @@ function Menu() {
     </Navbar>
   );
 }
-
-export default Menu;
